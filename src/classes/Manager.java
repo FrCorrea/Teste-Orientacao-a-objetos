@@ -1,4 +1,4 @@
-package src;
+package classes;
 
 public class Manager extends Employee{
     private double salaryFix;

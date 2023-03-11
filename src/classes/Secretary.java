@@ -1,4 +1,4 @@
-package src;
+package classes;
 
 public class Secretary extends Employee{
 

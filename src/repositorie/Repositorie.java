@@ -1,9 +1,9 @@
 package repositorie;
 
-import src.Employee;
-import src.Manager;
-import src.Secretary;
-import src.Seller;
+import classes.Employee;
+import classes.Manager;
+import classes.Secretary;
+import classes.Seller;
 
 import java.util.ArrayList;
 import java.util.List;

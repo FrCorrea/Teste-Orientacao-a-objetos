@@ -1,6 +1,4 @@
-package src;
-
-import java.util.List;
+package classes;
 
 public class Sale {
     private int yearSale;
