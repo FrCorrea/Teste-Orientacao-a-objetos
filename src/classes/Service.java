@@ -1,6 +1,7 @@
 package classes;
 
 import Exceptions.IlegalMonthOrYearException;
+import Exceptions.NullException;
 
 import java.util.List;
 
@@ -81,7 +82,7 @@ public class Service {
 
     //Um método que receba uma lista de funcionários, mês e ano
     // e retorne o que recebeu o valor mais alto no mês.
-    public Employee highestPaidEmployee(List<Employee> employees, int month, int year)throws IlegalMonthOrYearException{
+    public Employee highestPaidEmployee(List<Employee> employees, int month, int year) throws IlegalMonthOrYearException, NullException {
         if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
         if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         double salaryValue = 0;
@@ -107,13 +108,14 @@ public class Service {
                 hpEmployee = employee;
             }
         }
+        if(hpEmployee == null){throw new NullException();}
         return hpEmployee;
 
     }
 
     //Um método que receba uma lista somente com os funcionários que recebem benefícios, mês e ano e
     // retorne o nome do funcionário que recebeu o valor mais alto em benefícios no mês.
-    public String highestBeneficiaryEmployee(List<Employee> employees, int month, int year)throws IlegalMonthOrYearException{
+    public String highestBeneficiaryEmployee(List<Employee> employees, int month, int year) throws IlegalMonthOrYearException, NullException {
         if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
         if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         Employee hbEmployee = null;
@@ -135,12 +137,13 @@ public class Service {
                 hbEmployee = employee;
             }
         }
+        if(hbEmployee == null){throw new NullException();}
         return hbEmployee.name;
     }
 
     //Um método que receba uma lista de vendedores, mês e ano e retorne o que mais
     // vendeu no mês.
-    public Seller topSeller(List<Seller> sellers, int month, int year)throws IlegalMonthOrYearException{
+    public Seller topSeller(List<Seller> sellers, int month, int year) throws IlegalMonthOrYearException, NullException {
         if(month < 1 || month > 12 ) { throw new IlegalMonthOrYearException();}
         if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         Seller topSeller = null;
@@ -158,6 +161,7 @@ public class Service {
                 topSeller = seller;
             }
         }
+        if(topSeller == null){throw new NullException();}
         return topSeller;
     }
 

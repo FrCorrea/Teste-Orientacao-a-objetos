@@ -1,6 +1,7 @@
 package classes;
 
 import Exceptions.IlegalMonthOrYearException;
+import Exceptions.NullException;
 import repositorie.Repositorie;
 
 import java.util.List;
@@ -96,6 +97,8 @@ public class AppIU {
                 }
             }catch (IlegalMonthOrYearException imy){
                 System.out.println(imy.getMessage());
+            }catch (NullException ne){
+                System.out.println(ne.getMessage());
             }
         }
 
