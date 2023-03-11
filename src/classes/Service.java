@@ -1,3 +1,7 @@
+package src;
+
+import Exceptions.IlegalMonthOrYearException;
+
 import java.util.List;
 
 public class Service {
@@ -6,7 +10,7 @@ public class Service {
 
     // Um método que receba uma lista de funcionários, mês e ano
     // e retorne o valor total pago (salário e benefício) a esses funcionários no mês.
-    public double sumSalary(List<Employee> employees, int month, int year) throws IlegalMonthOrYearException{
+    public double sumSalary(List<Employee> employees, int month, int year) throws IlegalMonthOrYearException {
         if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
         if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
 
