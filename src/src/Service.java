@@ -6,7 +6,10 @@ public class Service {
 
     // Um método que receba uma lista de funcionários, mês e ano
     // e retorne o valor total pago (salário e benefício) a esses funcionários no mês.
-    public double sumSalary(List<Employee> employees, int month, int year){
+    public double sumSalary(List<Employee> employees, int month, int year) throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
+
         double totalCost = 0;
         for(Employee employee: employees){
 
@@ -29,8 +32,11 @@ public class Service {
 
     //Um método que receba uma lista de funcionários, mês e ano
     // e retorne o total pago somente em salários no mês.
-    public double totalMonthSalary(List<Employee> employees,int month, int year){
+    public double totalMonthSalary(List<Employee> employees,int month, int year)throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         double totalCost = 0;
+
         for(Employee employee: employees){
             //downcasting
             if(employee instanceof Secretary){
@@ -51,7 +57,9 @@ public class Service {
 
     //Um método que receba uma lista somente com os funcionários que recebem benefícios,
     // mês e ano e retorne o total pago em benefícios no mês.
-    public double totalBeneficiesMonth(List<Employee> employees, int month, int year){
+    public double totalBeneficiesMonth(List<Employee> employees, int month, int year)throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         double totalCost = 0;
         for(Employee employee: employees){
             //downcasting
@@ -69,7 +77,9 @@ public class Service {
 
     //Um método que receba uma lista de funcionários, mês e ano
     // e retorne o que recebeu o valor mais alto no mês.
-    public Employee highestPaidEmployee(List<Employee> employees, int month, int year){
+    public Employee highestPaidEmployee(List<Employee> employees, int month, int year)throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         double salaryValue = 0;
         double value = 0;
         Employee hpEmployee = null;
@@ -99,7 +109,9 @@ public class Service {
 
     //Um método que receba uma lista somente com os funcionários que recebem benefícios, mês e ano e
     // retorne o nome do funcionário que recebeu o valor mais alto em benefícios no mês.
-    public String highestBeneficiaryEmployee(List<Employee> employees, int month, int year){
+    public String highestBeneficiaryEmployee(List<Employee> employees, int month, int year)throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         Employee hbEmployee = null;
         double value = 0;
         double benefitValue = 0;
@@ -124,7 +136,9 @@ public class Service {
 
     //Um método que receba uma lista de vendedores, mês e ano e retorne o que mais
     // vendeu no mês.
-    public Seller topSeller(List<Seller> sellers, int month, int year){
+    public Seller topSeller(List<Seller> sellers, int month, int year)throws IlegalMonthOrYearException{
+        if(month < 1 || month > 12 ) { throw new IlegalMonthOrYearException();}
+        if(year > 2023 || year < 1)  { throw new IlegalMonthOrYearException();}
         Seller topSeller = null;
         double value = 0;
         double sellerValue = 0;
